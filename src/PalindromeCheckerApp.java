@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class PalindromeCheckerApp {
 
@@ -8,15 +10,17 @@ public class PalindromeCheckerApp {
 
         Stack<Character> stack = new Stack<>();
 
-        for (int i = 0; i < original.length(); i++) {
-            stack.push(original.charAt(i));
+        Queue<Character> queue = new ArrayDeque<>();
+
+        for (char ch : original.toCharArray()) {
+            stack.push(ch);
+            queue.add(ch);
         }
 
         boolean isPalindrome = true;
 
-        for (int i = 0; i < original.length(); i++) {
-            char poppedChar = stack.pop();
-            if (original.charAt(i) != poppedChar) {
+        while (!queue.isEmpty()) {
+            if (!stack.pop().equals(queue.remove())) {
                 isPalindrome = false;
                 break;
             }
