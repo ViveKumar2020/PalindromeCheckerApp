@@ -3,27 +3,21 @@ import java.util.Scanner;
 public class PalindromeCheckerApp {
 
     public static void main() {
-        Scanner sc = new Scanner(System.in);
+        String original = "madam";
 
-        System.out.print("Enter a word: ");
-        String word = sc.nextLine();
+        // Variable to store reversed string
+        String reversed = "";
 
-        int length = word.length();
-        boolean isPalindrome = true;
-
-        for (int i = 0; i < length / 2; i++) {
-            if (word.charAt(i) != word.charAt(length - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Reverse using for loop
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
 
-        if (isPalindrome) {
-            System.out.println(word + " is a Palindrome.");
+        // Compare original and reversed
+        if (original.equals(reversed)) {
+            System.out.println(original + " is a Palindrome.");
         } else {
-            System.out.println(word + " is NOT a Palindrome.");
+            System.out.println(original + " is NOT a Palindrome.");
         }
-
-        sc.close();
     }
 }
