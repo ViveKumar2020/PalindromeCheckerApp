@@ -1,11 +1,9 @@
 import java.util.*;
 
-// Strategy Interface
 interface PalindromeStrategy {
     boolean checkPalindrome(String input);
 }
 
-// Stack-based Strategy
 class StackStrategy implements PalindromeStrategy {
 
     @Override
@@ -29,7 +27,6 @@ class StackStrategy implements PalindromeStrategy {
     }
 }
 
-// Deque-based Strategy
 class DequeStrategy implements PalindromeStrategy {
 
     @Override
@@ -53,12 +50,10 @@ class DequeStrategy implements PalindromeStrategy {
     }
 }
 
-// Context Class
 class PalindromeService {
 
     private PalindromeStrategy strategy;
 
-    // Inject strategy at runtime
     public PalindromeService(PalindromeStrategy strategy) {
         this.strategy = strategy;
     }
@@ -72,7 +67,6 @@ class PalindromeService {
     }
 }
 
-// Main Class
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
