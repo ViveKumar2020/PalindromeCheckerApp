@@ -29,7 +29,7 @@ public class PalindromeCheckerApp{
         } else {
             System.out.println("The string is NOT a Palindrome.");
         }
-
+        System.out.println("-------------------------");
         scanner.close();
     }
 }
